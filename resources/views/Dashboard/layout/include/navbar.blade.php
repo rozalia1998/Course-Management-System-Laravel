@@ -34,25 +34,56 @@
 
 
             <!-- #section:basics/navbar.user_menu -->
-            <li class="">
+            <li class="light-blue">
                 <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                     <img class="nav-user-photo" src="{{ asset('dashboard/assets/images/avatar2.png') }}"
                         alt="" />
                     <span class="user-info">
                         <small>hello</small>
-
+                       admin
                     </span>
 
                     <i class="ace-icon fa fa-caret-down"></i>
                 </a>
+
+                <ul class="user-menu dropdown-menu dropdown-menu dropdown-light-blue dropdown-caret dropdown-close ">
+
+
+
+
+                        {{-- <li>
+                            <a href="profile.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                Logout
+                            </a>
+                        </li> --}}
+                        <li>
+
+                            <div>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+
+                </ul>
             </li>
-            <ul
-                class="user-menu dropdown-menu dropdown-menu dropdown-light-blue dropdown-caret dropdown-close ">
-
-                <li class="divider"></li>
-
-
-            </ul>
+        </ul>
     </div>
 
 

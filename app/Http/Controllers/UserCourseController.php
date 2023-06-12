@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\course;
 use App\Models\user_course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserCourseController extends Controller
 {
@@ -12,7 +15,8 @@ class UserCourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses =course::all();
+        return view('frontend.index',compact('courses'));
     }
 
     /**
@@ -20,7 +24,8 @@ class UserCourseController extends Controller
      */
     public function create()
     {
-        //
+        $courses=course::all();
+        return view('frontend.craete' ,compact('courses'));
     }
 
     /**
@@ -28,9 +33,21 @@ class UserCourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        // $id = Auth::id();
 
+        // $courses=user_course::create([
+        //     'user_id'=>Auth::id() ,
+        //    'course_id'=>$request->course
+        // ] );
+
+        $courses = new user_course();
+        $courses->user_id =  Auth::id() ;
+        $courses->course_id=$request->course;
+    
+        $courses->save();
+       return redirect()->route('corses.index');
+
+        }
     /**
      * Display the specified resource.
      */

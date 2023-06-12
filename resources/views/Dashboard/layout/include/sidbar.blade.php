@@ -4,11 +4,30 @@
 
 
 <ul class="nav nav-list">
-    <li ">
-        <a href="">
-          
+    <li class="{{ (Request::route()->getName() == 'dash.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.index') }}">
+
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text">Dashboard </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+     <li class="{{ (Request::route()->getName() == 'users.index') ? 'active' : '' }}">
+        <a href="{{ route('users.index') }}">
+
+            <i class="menu-icon fa fa-tag"></i>
+            <span class="menu-text">Users </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+    <li class="{{ (Request::route()->getName() == 'users.soft') ? 'active' : '' }}">
+        <a href="{{ route('users.soft') }}">
+
+            <i  class="menu-icon   fa fa-trash-o"></i>
+          <span class="menu-text active" >Trash </span>
+
         </a>
 
         <b class="arrow"></b>

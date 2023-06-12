@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserCourseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +21,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', function () {
-    return view('Dashboard.layout.dashboard');
+Auth::routes();
+Route::prefix('admin')->group(function () {
+    // Auth::routes();
+    // Router::post('register',[RegisterController::class,'index']);
+    Route::resource('/users', UserController::class);
+    Route::get('/', [HomeController::class, 'index'])->name("admin.index");
+    Route::get('soft', [UserController::class, 'showsoft'])->name('users.soft');
+    Route::get('finldelet/{id}', [UserController::class, 'finldelet'])->name('user.finldelet');
+    Route::get('user/restore/{id}', [UserController::class, 'restor'])->name('users.restore');
+})->middleware('admin');
+
+Route::prefix('home')->group(function () {
+
+    Route::get('/', [UserCourseController::class, 'index'])->name("home.index");
+    Route::resource('/corses', UserCourseController::class);
 });

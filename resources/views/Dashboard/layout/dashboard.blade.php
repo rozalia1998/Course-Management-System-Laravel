@@ -12,6 +12,8 @@
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/font-awesome.css') }}" />
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
 
     <!-- page specific plugin styles -->
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/bootstrap-duallistbox.css') }}" />
@@ -96,7 +98,7 @@
                     <ul class="breadcrumb">
                         <li>
                             <i class="ace-icon fa fa-home home-icon"></i>
-                            <a href="">Home</a>
+                            <a href="{{ route('admin.index') }}">Home</a>
                         </li>
                         <li class="active">Dashboard</li>
                     </ul><!-- /.breadcrumb -->
@@ -129,7 +131,7 @@
 
 
                                     <h2 style="margin:0" class="widget-title">
-                                        {{ $method_title ?? '' }}
+
 
                                     </h2>
 
@@ -139,12 +141,6 @@
 
                                         <div class="d-none d-md-block">
 
-                                            {{-- @if ($method_name == 'index' && in_array('create', $module_actions))
-                                                <a href="{{ route($module_name . '.create') }}"
-                                                    class="btn btn-primary btn-xs"><i
-                                                        class="ace-icon fa fa-plus"></i>Creat</a>
-                                            @endif --}}
-                                        </div>
                                     </div>
 
 
@@ -179,7 +175,7 @@
 
         </div><!-- /.main-content -->
 
-        
+
 
 
     </div><!-- /.main-container -->

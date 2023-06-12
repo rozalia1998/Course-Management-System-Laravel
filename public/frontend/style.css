@@ -1,0 +1,90 @@
+    .course-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+
+    }
+    
+    .course-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin:60px;
+    }
+    
+    .course-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .course-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .course-description {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .course-price {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .course-enroll-button {
+        background-color: #007bff;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px 20px;
+        transition: background-color 0.2s ease-in-out;
+        
+    }
+    .div{
+       margin-left:500px;
+
+    }
+    .course-enroll-button:hover {
+        background-color: #0069d9;
+    }
+    
+    .image-container {
+        position: relative;
+    }
+    
+    .image-container img {
+        width: 100%;
+        opacity: 0.4;
+        /* يمكن تعديل هذه القيمة حسب الحاجة */
+    }
+    
+    .image-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #39198b;
+        z-index: 1;
+    }
+    
+    .image-text h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .image-text p {
+        font-size: 1.5rem;
+        margin: 0;
+    }
