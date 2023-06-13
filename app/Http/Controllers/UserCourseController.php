@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\course;
 use App\Models\user_course;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ class UserCourseController extends Controller
     public function index()
     {
         //
+        $user_courses = user_course::all();
+        return view('usercourse.index', compact('user_courses'));
     }
 
     /**
@@ -21,6 +24,9 @@ class UserCourseController extends Controller
     public function create()
     {
         //
+        $user_courses = course::all();
+        return view('usercourse.create',compact('user_courses'));
+      
     }
 
     /**
@@ -29,6 +35,13 @@ class UserCourseController extends Controller
     public function store(Request $request)
     {
         //
+        
+        user_course::create([
+        'user_id' => $request->user_id,
+        'course_id' => $request->course_id,
+      
+        ]);
+        return redirect('usercourse');
     }
 
     /**

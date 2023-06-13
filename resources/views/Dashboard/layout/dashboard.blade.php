@@ -77,6 +77,7 @@
 
         <!-- #section:basics/sidebar -->
         <div id="sidebar" class="sidebar                  responsive">
+            
             @include('dashboard.layout.include.sidbar');
 
 
@@ -97,6 +98,7 @@
                         <li>
                             <i class="ace-icon fa fa-home home-icon"></i>
                             <a href="">Home</a>
+                            
                         </li>
                         <li class="active">Dashboard</li>
                     </ul><!-- /.breadcrumb -->
@@ -129,7 +131,7 @@
 
 
                                     <h2 style="margin:0" class="widget-title">
-                                        {{ $method_title ?? '' }}
+                                  
 
                                     </h2>
 

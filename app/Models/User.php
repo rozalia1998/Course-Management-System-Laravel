@@ -24,10 +24,7 @@ class User extends Authenticatable
         'password'
     ];
 
-    public function courses()
-    {
-        return $this->belongsToMany(Course::class, 'user_courses');
-    }
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -48,4 +45,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function course()
+    {
+        return $this->belongsToMany(course::class, 'user_courses');
+    }
 }
